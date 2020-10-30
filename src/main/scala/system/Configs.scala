@@ -82,3 +82,6 @@ class BaseFPGAConfig extends Config(new BaseConfig)
 
 class DefaultFPGAConfig extends Config(new WithNSmallCores(1) ++ new BaseFPGAConfig)
 class DefaultFPGASmallConfig extends Config(new DefaultFPGAConfig)
+
+class DefaultNexys4DDRConfig  extends Config(new WithNBigCores(1) ++ new BaseConfig)
+class DefaultNexysVideoConfig extends Config(new WithExtMemSize(x"2000_0000") ++ new DefaultNexys4DDRConfig)
